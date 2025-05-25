@@ -20,7 +20,7 @@ import {
   UserBaseType,
 } from './types.js';
 
-const MemberTypeId = new GraphQLEnumType({
+export const MemberTypeId = new GraphQLEnumType({
   name: 'MemberTypeId',
   values: {
     BASIC: { value: 'BASIC' },
@@ -28,7 +28,7 @@ const MemberTypeId = new GraphQLEnumType({
   },
 });
 
-const MemberType = new GraphQLObjectType<MemberBaseType>({
+export const MemberType = new GraphQLObjectType<MemberBaseType>({
   name: 'MemberType',
   fields: () => ({
     id: { type: new GraphQLNonNull(MemberTypeId) },
@@ -37,7 +37,7 @@ const MemberType = new GraphQLObjectType<MemberBaseType>({
   }),
 });
 
-const Profile = new GraphQLObjectType<ProfileBaseType>({
+export const Profile = new GraphQLObjectType<ProfileBaseType>({
   name: 'Profile',
   fields: () => ({
     id: { type: new GraphQLNonNull(UUIDType) },
@@ -58,7 +58,7 @@ const Profile = new GraphQLObjectType<ProfileBaseType>({
   }),
 });
 
-const Post = new GraphQLObjectType<PostBaseType>({
+export const Post = new GraphQLObjectType<PostBaseType>({
   name: 'Post',
   fields: () => ({
     id: { type: new GraphQLNonNull(UUIDType) },
@@ -67,7 +67,7 @@ const Post = new GraphQLObjectType<PostBaseType>({
   }),
 });
 
-const User = new GraphQLObjectType<UserBaseType>({
+export const User = new GraphQLObjectType<UserBaseType>({
   name: 'User',
   fields: () => ({
     id: { type: new GraphQLNonNull(UUIDType) },
